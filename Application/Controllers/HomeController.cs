@@ -85,7 +85,8 @@ namespace RabbitApp.Controllers
                 consumer.Received += (model, ea) =>
                 {
                     var body = ea.Body;
-                    var message = Encoding.UTF8.GetString(body);
+                    var msg = Encoding.UTF8.GetString(body);
+                    Console.WriteLine($"{msg} received");
                 };
                 channel.BasicConsume
                 (

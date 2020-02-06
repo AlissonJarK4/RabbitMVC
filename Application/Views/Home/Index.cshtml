@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>
+    function SendMessage() {
+        $.get("/Home/SendMessage");
+    }
+    function ReceiveMessage() {
+        $.get("/Home/ReceiveMessage");
+    }
+</script>
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+<div class="text-center">
+    <button runat="server" useSubmitBehavior="false" onclick="ReceiveMessage()">Create connection</button>
+    <button runat="server" useSubmitBehavior="false" onclick="SendMessage()">Send message</button>
+</div>

@@ -60,14 +60,14 @@ namespace RabbitApp.Controllers
                     body: body
                 );
 
-                Console.WriteLine($"[x] Sent {msg}");
+                Console.WriteLine($"Sent {msg}");
             }
             return new EmptyResult();
         }
 
         public ActionResult ReceiveMessage()
         {
-            Console.WriteLine("Starting consumption");
+            Console.WriteLine("Creating consumer");
             var factory = new ConnectionFactory(){ HostName = "docker", UserName = "admin", Password = "admin" };
             using (var connection = factory.CreateConnection())
             using (var channel = connection.CreateModel())
@@ -94,7 +94,7 @@ namespace RabbitApp.Controllers
                     consumer: consumer
                 );
 
-                Console.WriteLine("Consumer created");
+                Console.WriteLine("Consumer ready");
                 Console.ReadLine();
             }
             return new EmptyResult();

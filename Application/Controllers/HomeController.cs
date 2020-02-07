@@ -62,6 +62,7 @@ namespace RabbitApp.Controllers
 
                 Console.WriteLine($"Sent {msg}");
             }
+            
             return new EmptyResult();
         }
 

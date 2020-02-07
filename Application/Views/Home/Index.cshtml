@@ -8,6 +8,13 @@
     }
     function ReceiveMessage() {
         $.get("/Home/ReceiveMessage");
+
+        var x = document.getElementById("consumer");
+        if (x.style.display === "none") {
+        x.style.display = "block";
+        } else {
+        x.style.display = "none";
+        }
     }
 </script>
 <div class="text-center">
@@ -15,6 +22,6 @@
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
 <div class="text-center">
-    <button runat="server" useSubmitBehavior="false" onclick="ReceiveMessage()">Create connection</button>
+    <button runat="server" useSubmitBehavior="false" onclick="ReceiveMessage()" id="consumer">Create consumer</button>
     <button runat="server" useSubmitBehavior="false" onclick="SendMessage()">Send message</button>
 </div>
